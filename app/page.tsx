@@ -1,215 +1,209 @@
-"use client";
+'use client' ;
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import {
-  Mail,
-  User,
-  BookOpen,
-  VideoIcon,
-  DollarSign,
-  ArrowRight,
-} from "lucide-react";
-import Image from "next/image";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Heart, Star, Camera, Apple, User, ArrowRight, TrendingUp } from "lucide-react";
 
 const LandingPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 text-white">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
-                    Revolutionize Your Learning Experience
+                    Discover & Share Delicious Recipes
                   </h1>
-                  <p className="max-w-xl md:text-xl">
-                    Our platform brings tutors and students together for an
-                    interactive and immersive educational journey.
+                  <p className="max-w-md text-md md:text-lg">
+                    Join our community to explore and share amazing food recipes. Perfect for food lovers everywhere.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 sm:flex-row">
-                  <Button className="bg-white text-blue-600 hover:bg-gray-200">
+                  <Button variant="outline" className="h-10 px-8 text-sm font-medium">
                     Get Started
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="text-white border-white hover:bg-white hover:text-blue-600"
-                  >
+                  <Button variant="outline" className="h-10 px-8 text-sm font-medium">
                     Learn More
                   </Button>
                 </div>
               </div>
-              <Image
-                src="https://picsum.photos/seed/picsum/200/300"
-                alt="Learning"
-                width={400}
-                height={600}
-                className="mx-auto w-full rounded-xl lg:order-last"
-              />
+              <div className="flex items-center justify-center">
+                <img
+                  src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
+                  alt="Delicious Food"
+                  className="rounded-lg shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-purple-800">
+          <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Core Features
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Explore the powerful features designed to enhance the
-                educational experience for both tutors and students.
-              </p>
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold sm:text-4xl">Features</h2>
+                <p className="max-w-xl text-md md:text-lg">
+                  Our platform offers a variety of features to enhance your food sharing experience.
+                </p>
+              </div>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 py-12">
-              <Card>
+            <div className="grid grid-cols-1 gap-6 mt-12 md:grid-cols-2 lg:grid-cols-3">
+              <Card className="flex flex-col items-center p-6 bg-purple-700">
+                <Heart className="h-12 w-12 mb-4 text-purple-100" />
                 <CardHeader>
-                  <User className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>User Authentication</CardTitle>
-                  <CardDescription>
-                    Email and Password Login/Signup
-                  </CardDescription>
+                  <CardTitle className="text-lg font-bold">Share with Love</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
-                    Secure accounts for students and tutors with essential login
-                    and signup capabilities.
+                  <p className="text-purple-200">
+                    Share your favorite recipes and photos with a vibrant community of food enthusiasts.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="flex flex-col items-center p-6 bg-purple-700">
+                <Camera className="h-12 w-12 mb-4 text-purple-100" />
                 <CardHeader>
-                  <BookOpen className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Course Management</CardTitle>
-                  <CardDescription>Create and View Courses</CardDescription>
+                  <CardTitle className="text-lg font-bold">Capture Moments</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
-                    Tutors can create and manage their courses with flexible
-                    scheduling and detailed descriptions.
+                  <p className="text-purple-200">
+                    Capture and upload high-quality photos of your culinary creations.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="flex flex-col items-center p-6 bg-purple-700">
+                <Star className="h-12 w-12 mb-4 text-purple-100" />
                 <CardHeader>
-                  <VideoIcon className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Zoom Link Access</CardTitle>
-                  <CardDescription>Controlled Access</CardDescription>
+                  <CardTitle className="text-lg font-bold">Top Recipes</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
-                    Secure Zoom access ensures only enrolled students can join
-                    the class sessions.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <DollarSign className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Payment Processing</CardTitle>
-                  <CardDescription>Secure Transactions</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Integrated payment solutions ensure seamless and secure
-                    transactions for course enrollments.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <User className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Student Dashboard</CardTitle>
-                  <CardDescription>Enrolled Courses Overview</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    A personalized dashboard for students to monitor and access
-                    their enrolled courses easily.
+                  <p className="text-purple-200">
+                    Discover top-rated recipes from chefs and home cooks around the world.
                   </p>
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container mx-auto px-4 md:px-6">
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Frequently Asked Questions
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Find answers to common questions and learn more about our
-                platform’s capabilities.
-              </p>
-            </div>
-            <div className="mx-auto max-w-3xl py-12">
-              <Accordion type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>
-                    How do I sign up as a tutor?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Tutors can sign up using their email and password and start
-                    creating courses immediately.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>
-                    How can students enroll in courses?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Students can browse available courses and enroll by
-                    proceeding to the payment page.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>
-                    What payment methods are supported?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    We support various payment methods to ensure a smooth
-                    enrollment experience for all users.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Join Us Today
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Begin your journey with our innovative learning management
-                platform. Sign up now and explore endless learning
-                possibilities!
-              </p>
-              <Button className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 text-lg">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold sm:text-4xl">Join Our Community</h2>
+                <p className="max-w-xl text-md md:text-lg">
+                  Connect with other food lovers, share your culinary adventures, and get inspired.
+                </p>
+              </div>
+              <Button variant="outline" className="h-10 px-8 text-sm font-medium">
                 Sign Up Now
               </Button>
             </div>
           </div>
         </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-purple-800">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold sm:text-4xl">Testimonials</h2>
+                <p className="max-w-xl text-md md:text-lg">
+                  Hear from our satisfied users about their experience with our platform.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 gap-6 mt-12 md:grid-cols-2 lg:grid-cols-3">
+              <Card className="flex flex-col items-center p-6 bg-purple-700">
+                <Avatar>
+                  <AvatarImage src="https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY" />
+                  <AvatarFallback>JD</AvatarFallback>
+                </Avatar>
+                <CardContent className="mt-4">
+                  <p className="text-purple-200">
+                    "This platform has completely transformed the way I share and discover recipes. It's a must-have for any food lover!"
+                  </p>
+                  <p className="mt-2 text-sm font-bold">John Doe, Chef</p>
+                </CardContent>
+              </Card>
+              <Card className="flex flex-col items-center p-6 bg-purple-700">
+                <Avatar>
+                  <AvatarImage src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s" />
+                  <AvatarFallback>SM</AvatarFallback>
+                </Avatar>
+                <CardContent className="mt-4">
+                  <p className="text-purple-200">
+                    "I love how easy it is to connect with other food enthusiasts and share my favorite recipes."
+                  </p>
+                  <p className="mt-2 text-sm font-bold">Sarah Miller, Home Cook</p>
+                </CardContent>
+              </Card>
+              <Card className="flex flex-col items-center p-6 bg-purple-700">
+                <Avatar>
+                  <AvatarImage src="https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY" />
+                  <AvatarFallback>MJ</AvatarFallback>
+                </Avatar>
+                <CardContent className="mt-4">
+                  <p className="text-purple-200">
+                    "The community here is fantastic! I've learned so much and discovered so many new recipes."
+                  </p>
+                  <p className="mt-2 text-sm font-bold">Michael Johnson, Food Blogger</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold sm:text-4xl">Get the App</h2>
+                <p className="max-w-xl text-md md:text-lg">
+                  Download our app to enjoy all the features on your mobile device.
+                </p>
+              </div>
+              <div className="flex space-x-4">
+                <Button variant="outline" className="h-10 px-8 text-sm font-medium">
+                  <Apple className="mr-2 h-4 w-4" /> App Store
+                </Button>
+                <Button variant="outline" className="h-10 px-8 text-sm font-medium">
+                  <Camera className="mr-2 h-4 w-4" /> Google Play
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+      <footer className="bg-purple-900 p-6 text-center text-sm">
+        <div className="container px-4 md:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+            <div className="grid gap-1">
+              <h3 className="font-semibold">Product</h3>
+              <a href="#">Features</a>
+              <a href="#">Pricing</a>
+              <a href="#">Security</a>
+              <a href="#">Integrations</a>
+            </div>
+            <div className="grid gap-1">
+              <h3 className="font-semibold">Company</h3>
+              <a href="#">About Us</a>
+              <a href="#">Careers</a>
+              <a href="#">Blog</a>
+              <a href="#">Contact</a>
+            </div>
+            <div className="grid gap-1">
+              <h3 className="font-semibold">Resources</h3>
+              <a href="#">Documentation</a>
+              <a href="#">Help Center</a>
+              <a href="#">Community</a>
+              <a href="#">Templates</a>
+            </div>
+            <div className="grid gap-1">
+              <h3 className="font-semibold">Legal</h3>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
